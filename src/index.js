@@ -8,6 +8,9 @@ const newsRoutes = require('./routes/news');
 const programRoutes = require('./routes/program');
 const contentRoutes = require('./routes/content');
 const carouselRoutes = require('./routes/carousel');
+const youtubeRoutes = require('./routes/youtube');
+const sportifyRoutes = require('./routes/sportify');
+const sportifyListRoutes = require('./routes/sportifyList');
 
 const middlewareLogRequest = require('./middleware/logs');
 const upload = require('./middleware/multer');
@@ -37,6 +40,15 @@ app.use('/news', newsRoutes);
 
 // Program
 app.use('/program', programRoutes);
+
+// youtube
+app.use('/youtube', youtubeRoutes);
+
+// Sportify
+app.use('/sportify', sportifyRoutes);
+
+// Sportify List
+app.use('/sportify-list', sportifyListRoutes);
 
 app.use((err, req, res, next) => {
     res.json({
