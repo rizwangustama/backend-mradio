@@ -1,6 +1,5 @@
 const express = require('express');
-
-const sportifyController = require('../controller/Sportify');
+const sportifyController = require('../controller/sportify');
 
 const router = express.Router();
 

@@ -32,31 +32,6 @@ const detailSportify = async(req, res) => {
     }
 }
 
-// const createNewCarousel = async (req, res) => {
-//     const {body} = req;
-//     console.log(body);
-
-//     if(body.title == '' || body.url == '' || body.image == ''){
-//         return res.status(400).json({
-//             message: 'Anda mengirimkan data yang salah',
-//             data: null,
-//         })   
-//     }
-
-//     try {
-//         await CarouselModel.createNewCarousel(body);
-//         res.status(201).json({
-//             message: 'CREATE new Carousel success',
-//             data: body
-//         })
-//     } catch (error) {
-//         res.status(500).json({
-//             message: 'Server Error',
-//             serverMessage: error,
-//         })
-//     }
-// }
-
 const createNewSportify = async (req, res) => {
     const {body} = req;
 
