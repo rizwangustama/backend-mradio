@@ -11,6 +11,7 @@ const carouselRoutes = require('./routes/carousel');
 const youtubeRoutes = require('./routes/youtube');
 const sportifyRoutes = require('./routes/sportify');
 const sportifyListRoutes = require('./routes/sportifyList');
+const bennerRoutes = require('./routes/benner');
 
 const middlewareLogRequest = require('./middleware/logs');
 const upload = require('./middleware/multer');
@@ -49,6 +50,9 @@ app.use('/sportify', sportifyRoutes);
 
 // Sportify List
 app.use('/sportify-list', sportifyListRoutes);
+
+// Benner
+app.use('/benner', bennerRoutes);
 
 app.use((err, req, res, next) => {
     res.json({

@@ -1,11 +1,11 @@
-const CarouselModel = require('../models/carousel');
+const BennerModel = require('../models/benner');
 
-const getAllCarousel = async (req, res) => {
+const getAllBenner= async (req, res) => {
     try {
-        const [data] = await CarouselModel.getAllCarousel();
+        const [data] = await BennerModel.getAllBenner();
     
         res.json({
-            message: 'GET all Carousel success',
+            message: 'GET all Benner success',
             data: data
         })
     } catch (error) {
@@ -16,12 +16,12 @@ const getAllCarousel = async (req, res) => {
     }
 }
 
-const detailCarousel = async(req, res) => {
-    const {idCarousel} = req.params;
+const detailBenner = async(req, res) => {
+    const {idBenner} = req.params;
     try {
-        const [data] = await CarouselModel.detailCarousel(idCarousel);
+        const [data] = await BennerModel.detailBenner(idBenner);
         res.json({
-            message: 'DETAIL Carousel Success',
+            message: 'DETAIL Benner Success',
             data: data
         })
     } catch (error) {
@@ -32,7 +32,7 @@ const detailCarousel = async(req, res) => {
     }
 }
 
-const createNewCarousel = async (req, res) => {
+const createNewBenner= async (req, res) => {
     const {body} = req;
     console.log(body);
 
@@ -44,9 +44,9 @@ const createNewCarousel = async (req, res) => {
     // }
 
     try {
-        await CarouselModel.createNewCarousel(body);
+        await BennerModel.createNewBenner(body);
         res.status(201).json({
-            message: 'CREATE new Carousel success',
+            message: 'CREATE new Benner success',
             data: body
         })
     } catch (error) {
@@ -57,15 +57,15 @@ const createNewCarousel = async (req, res) => {
     }
 }
 
-const updateCarousel = async (req, res) => {
-    const {idCarousel} = req.params;
+const updateBenner = async (req, res) => {
+    const {idBenner} = req.params;
     const {body} = req;
     try {
-        await CarouselModel.updateCarousel(body, idCarousel);
+        await BennerModel.updateBenner(body, idBenner);
         res.json({
-            message: 'UPDATE Carousel success',
+            message: 'UPDATE Benner success',
             data: {
-                id: idCarousel,
+                id: idBenner,
                 ...body
             },
         })
@@ -78,12 +78,12 @@ const updateCarousel = async (req, res) => {
 }
 
 
-const deleteCarousel = async (req, res) => {
-    const {idCarousel} = req.params;
+const deleteBenner = async (req, res) => {
+    const {idBenner} = req.params;
     try {
-        await CarouselModel.deleteCarousel(idCarousel);
+        await BennerModel.deleteBenner(idBenner);
         res.json({
-            message: 'DELETE Carousel success',
+            message: 'DELETE Benner success',
             data: null
         })
     } catch (error) {
@@ -95,9 +95,9 @@ const deleteCarousel = async (req, res) => {
 }
 
 module.exports = {
-    getAllCarousel,
-    detailCarousel,
-    createNewCarousel,
-    updateCarousel,
-    deleteCarousel
+    getAllBenner,
+    detailBenner,
+    createNewBenner,
+    updateBenner,
+    deleteBenner
 }
